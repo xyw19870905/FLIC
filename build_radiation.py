@@ -14,8 +14,8 @@ def get_data(filename):
     x = []
     t = []
     for i,v in enumerate(lines):
-        x.append(v.strip().split('\t')[0])
-        t.append(v.strip().split('\t')[1])
+        x.append(float(v.strip().split('\t')[0]))
+        t.append(float(v.strip().split('\t')[1]))
         
     return x, t
 
@@ -25,6 +25,7 @@ def rebuild_temperature(x, t):
         if v not in tmp1:
             tmp1.append(v)
     tmp1.sort()
+    print(tmp1)
     
     npoints = []
     tmp2 = []
@@ -94,7 +95,7 @@ def rewrite_fluent_file(filename):
     for i,v in enumerate(x):
         f.write('%.6f\t%.6f\n' % (v, t[i]))
     f.close()
-    
+   
 def main():
     filename = input('Input Fluent Radiation File Name: ')
     rewrite_fluent_file(filename)
