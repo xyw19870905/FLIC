@@ -1,6 +1,6 @@
-filename = 'wangjin_01.inp'
+filename = input("CSV File Name: ")
 
-f = open(filename, 'r')
+f = open(filename.strip(), 'r')
 lines = f.readlines()
 f.close()
 

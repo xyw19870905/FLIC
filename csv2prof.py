@@ -1,6 +1,6 @@
-filename = 'final02.csv'
+filename = input("FLIC Profile Name: ")
 
-f = open(filename, 'r')
+f = open(filename.strip(), 'r')
 lines = f.readlines()
 f.close()
 
